@@ -1,0 +1,23 @@
+import java.util.Scanner;
+
+public class ATMWithdrawal {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        // Input
+        int amount = sc.nextInt();
+        sc.nextLine(); // consume newline
+        String noteStatus = sc.nextLine().trim();
+
+        // Logic
+        if (noteStatus.equals("available") && amount % 100 == 0) {
+            System.out.println("Amount " + amount + " can be withdrawn");
+        } else if (noteStatus.equals("not available") && amount % 500 == 0) {
+            System.out.println("Amount " + amount + " can be withdrawn");
+        } else {
+            System.out.println("Enter amount in multiples of 500");
+        }
+
+        sc.close();
+    }
+}
