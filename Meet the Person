@@ -1,0 +1,17 @@
+import java.util.Scanner;
+
+public class PersonInfo {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        // Read inputs
+        int age = sc.nextInt();
+        double height = sc.nextDouble();
+        String name = sc.next();   // name contains only alphabets without spaces
+
+        // Output in the required format
+        System.out.printf("%s is %d years old and %.2f meters tall.%n", name, age, height);
+
+        sc.close();
+    }
+}
