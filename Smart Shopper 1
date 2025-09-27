@@ -1,0 +1,46 @@
+import java.util.Scanner;
+import java.text.DecimalFormat;
+
+public class ShoppingBill {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        DecimalFormat df = new DecimalFormat("0.00");
+
+        // Read item 1
+        double cost1 = sc.nextDouble();
+        int quantity1 = sc.nextInt();
+
+        // Read item 2
+        double cost2 = sc.nextDouble();
+        int quantity2 = sc.nextInt();
+
+        // Read item 3
+        double cost3 = sc.nextDouble();
+        int quantity3 = sc.nextInt();
+
+        // Read budget
+        double budget = sc.nextDouble();
+
+        // Calculate total before tax
+        double totalBeforeTax = (cost1 * quantity1) + (cost2 * quantity2) + (cost3 * quantity3);
+
+        // Calculate tax (10%)
+        double tax = totalBeforeTax * 0.10;
+
+        // Calculate total after tax
+        double totalAfterTax = totalBeforeTax + tax;
+
+        // Print results
+        System.out.println("Total (Before Tax): " + df.format(totalBeforeTax));
+        System.out.println("Total (After Tax): " + df.format(totalAfterTax));
+
+        // Check budget
+        if (totalAfterTax <= budget) {
+            System.out.println("Within Budget");
+        } else {
+            System.out.println("Over Budget");
+        }
+
+        sc.close();
+    }
+}
