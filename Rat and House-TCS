@@ -1,0 +1,36 @@
+import java.util.*;
+
+public class RatsAndFood {
+    public static int houseNumber(int r, int unit, int n, int[] arr) {
+        if (arr == null) {
+            return -1; // array is null
+        }
+
+        int totalFoodRequired = r * unit;
+        int sum = 0;
+
+        for (int i = 0; i < n; i++) {
+            sum += arr[i];
+            if (sum >= totalFoodRequired) {
+                return i + 1; // since house numbers start from 1
+            }
+        }
+
+        return 0; // not enough food in all houses combined
+    }
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        int r = sc.nextInt();       // number of rats
+        int unit = sc.nextInt();    // food per rat
+        int n = sc.nextInt();       // number of houses
+        int[] arr = new int[n];
+
+        for (int i = 0; i < n; i++) {
+            arr[i] = sc.nextInt();
+        }
+
+        System.out.println(houseNumber(r, unit, n, arr));
+    }
+}
