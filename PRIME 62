@@ -1,0 +1,28 @@
+import java.util.Scanner;
+
+public class PrimeChecker {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        
+        // Read input
+        int number = scanner.nextInt();
+        
+        // Validate input
+        if (number <= 1) {
+            System.out.println("NO");
+            return;
+        }
+
+        // Check for primality
+        boolean isPrime = true;
+        for (int i = 2; i <= Math.sqrt(number); i++) {
+            if (number % i == 0) {
+                isPrime = false;
+                break;
+            }
+        }
+
+        // Output result
+        System.out.println(isPrime ? "YES" : "NO");
+    }
+}
