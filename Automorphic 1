@@ -1,0 +1,26 @@
+import java.util.Scanner;
+
+public class AutomorphicNumber {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        
+        // Read input number
+        int num = sc.nextInt();
+        
+        // Find square
+        long square = (long) num * num;  // use long to avoid overflow
+        
+        // Convert both to strings
+        String numStr = String.valueOf(num);
+        String squareStr = String.valueOf(square);
+        
+        // Check if square ends with number
+        if (squareStr.endsWith(numStr)) {
+            System.out.println("YES");
+        } else {
+            System.out.println("NO");
+        }
+        
+        sc.close();
+    }
+}
