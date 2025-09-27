@@ -1,0 +1,44 @@
+import java.util.*;
+
+public class SortEvenOdd {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        // Input
+        int n = sc.nextInt();
+        int[] arr = new int[n];
+
+        for (int i = 0; i < n; i++) {
+            arr[i] = sc.nextInt();
+        }
+
+        // Separate evens and odds
+        List<Integer> evens = new ArrayList<>();
+        List<Integer> odds = new ArrayList<>();
+
+        for (int num : arr) {
+            if (num % 2 == 0) {
+                evens.add(num);
+            } else {
+                odds.add(num);
+            }
+        }
+
+        // Sort evens in descending order
+        evens.sort(Collections.reverseOrder());
+
+        // Sort odds in ascending order
+        Collections.sort(odds);
+
+        // Merge both lists
+        List<Integer> result = new ArrayList<>();
+        result.addAll(evens);
+        result.addAll(odds);
+
+        // Print result
+        for (int i = 0; i < result.size(); i++) {
+            System.out.print(result.get(i));
+            if (i < result.size() - 1) System.out.print(" ");
+        }
+    }
+}
