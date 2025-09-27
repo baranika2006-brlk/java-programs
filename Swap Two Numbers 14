@@ -1,0 +1,22 @@
+import java.util.Scanner;
+
+public class SwapUsingXOR {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        // Read two integers
+        int a = sc.nextInt();
+        int b = sc.nextInt();
+
+        // Swap using XOR
+        a = a ^ b;
+        b = a ^ b;
+        a = a ^ b;
+
+        // Print results after swap
+        System.out.println(a);
+        System.out.println(b);
+
+        sc.close();
+    }
+}
