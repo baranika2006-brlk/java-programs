@@ -1,0 +1,29 @@
+import java.io.*;
+import java.util.*;
+
+public class Solution {
+    static boolean isprime(int n){
+        if(n<=1) return false;
+        for (int i=2;i<=Math.sqrt(n);i++){
+            if(n%i==0){
+                return false;
+            }
+            
+        }
+        return true;
+    }
+
+    public static void main(String[] args) {
+        /* Enter your code here. Read input from STDIN. Print output to STDOUT. Your class should be named Solution. */
+        Scanner sc = new Scanner(System.in);
+        int end = sc.nextInt();
+        for(int i=2;i<=end;i++){
+            for(int j=i+1;j<=end;j++){
+                if(isprime(i) && isprime(j) && isprime(i+j)){
+                    System.out.println(i+" "+j);
+                }
+            }
+        }
+        
+    }
+}
