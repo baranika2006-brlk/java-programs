@@ -1,0 +1,20 @@
+import java.util.Scanner;
+
+public class MarathonEligibility {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        // Input
+        int age = sc.nextInt();
+        int fitnessScore = sc.nextInt();
+
+        // Check eligibility
+        if (age >= 18 && fitnessScore >= 60) {
+            System.out.println("Eligible for marathon");
+        } else {
+            System.out.println("Not eligible for marathon");
+        }
+
+        sc.close();
+    }
+}
