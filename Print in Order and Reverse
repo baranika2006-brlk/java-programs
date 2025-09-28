@@ -1,0 +1,19 @@
+import java.util.Scanner;
+
+public class NumberPrinter {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        int N = scanner.nextInt();
+        scanner.close();
+
+        // Print numbers from 1 to N
+        for (int i = 1; i <= N; i++) {
+            System.out.print(i + " ");
+        }
+
+        // Print numbers from N to 1
+        for (int i = N; i >= 1; i--) {
+            System.out.print(i + " ");
+        }
+    }
+}
