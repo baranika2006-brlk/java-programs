@@ -1,0 +1,26 @@
+import java.util.Scanner;
+
+public class GradeCalculator {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        int marks = scanner.nextInt();
+        String grade;
+
+        if (marks >= 90) {
+            grade = "Grade A";
+        } else if (marks >= 80) {
+            grade = "Grade B";
+        } else if (marks >= 70) {
+            grade = "Grade C";
+        } else if (marks >= 60) {
+            grade = "Grade D";
+        } else if (marks >= 50) {
+            grade = "Grade E";
+        } else {
+            grade = "Fail";
+        }
+
+        System.out.println(grade);
+        scanner.close();
+    }
+}
