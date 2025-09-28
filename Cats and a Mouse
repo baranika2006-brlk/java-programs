@@ -1,0 +1,33 @@
+import java.util.Scanner;
+
+public class Solution {
+
+    // Function to determine which cat will catch the mouse
+    static String catAndMouse(int x, int y, int z) {
+        int distA = Math.abs(x - z);  // Distance of Cat A from mouse
+        int distB = Math.abs(y - z);  // Distance of Cat B from mouse
+
+        if (distA < distB) {
+            return "Cat A";
+        } else if (distB < distA) {
+            return "Cat B";
+        } else {
+            return "Mouse C";  // Both reach at same time
+        }
+    }
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        int q = sc.nextInt();  // number of queries
+        for (int i = 0; i < q; i++) {
+            int x = sc.nextInt();  // Cat A position
+            int y = sc.nextInt();  // Cat B position
+            int z = sc.nextInt();  // Mouse position
+
+            System.out.println(catAndMouse(x, y, z));
+        }
+
+        sc.close();
+    }
+}
