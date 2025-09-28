@@ -1,0 +1,27 @@
+import java.util.Scanner;
+
+public class FactorCounter {
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        // Read the input integer N
+        int N = scanner.nextInt();
+
+        // Initialize a counter for factors
+        int count = 0;
+
+        // Iterate from 1 up to N to check for factors
+        for (int i = 1; i <= N; i++) {
+            // If N is perfectly divisible by i, then i is a factor
+            if (N % i == 0) {
+                count++;
+            }
+        }
+
+        // Print the total count of factors
+        System.out.println(count);
+
+        scanner.close();
+    }
+}
