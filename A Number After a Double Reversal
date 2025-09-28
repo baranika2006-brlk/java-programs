@@ -1,0 +1,34 @@
+class Solution {
+    /**
+     * Reverses the digits of an integer.
+     *
+     * @param n The integer to reverse.
+     * @return The reversed integer.
+     */
+    private int reverse(int n) {
+        int reversedNum = 0;
+        while (n != 0) {
+            int digit = n % 10;
+            reversedNum = reversedNum * 10 + digit;
+            n /= 10;
+        }
+        return reversedNum;
+    }
+
+    /**
+     * Checks if a number equals its double reversal.
+     *
+     * @param num The integer to check.
+     * @return True if reversed2 equals num, false otherwise.
+     */
+    public boolean isSameAfterReversals(int num) {
+        if (num == 0) {
+            return true; // Special case for 0, as reverse(0) is 0.
+        }
+
+        int reversed1 = reverse(num);
+        int reversed2 = reverse(reversed1);
+
+        return reversed2 == num;
+    }
+}
