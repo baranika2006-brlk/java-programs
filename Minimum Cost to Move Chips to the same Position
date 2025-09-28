@@ -1,0 +1,30 @@
+class Solution {
+    public int minCostToMoveChips(int[] position) {
+        int even = 0, odd = 0;
+
+        // Count chips at even and odd positions
+        for (int pos : position) {
+            if (pos % 2 == 0) {
+                even++;
+            } else {
+                odd++;
+            }
+        }
+
+        // Minimum cost is moving the smaller group to the larger one
+        return Math.min(even, odd);
+    }
+
+    public static void main(String[] args) {
+        Solution sol = new Solution();
+
+        int[] pos1 = {1, 2, 3};
+        System.out.println(sol.minCostToMoveChips(pos1)); // Output: 1
+
+        int[] pos2 = {2, 2, 2, 3, 3};
+        System.out.println(sol.minCostToMoveChips(pos2)); // Output: 2
+
+        int[] pos3 = {1, 1000000000};
+        System.out.println(sol.minCostToMoveChips(pos3)); // Output: 1
+    }
+}
